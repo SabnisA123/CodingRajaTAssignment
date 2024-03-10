@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Resume Generator</title>
+</head>
+<body>
+   
+<!--html code-->
+
+<div class="container" id="cv-form">
+    <h1 class="text-center my-2">Resume Generator</h1>
+<p class="text-center "> By learn for intership</p>
+<div class="row">
+
+    <div class="col-md-6">
+    <h3>Personal Information</h3>
+   <div class="form-group mt-2" >
+ <label for="nameField">Your Name</label>
+ <input type="text"
+  placeholder="Enter here" 
+  id="nameField" 
+   class="form-control">
+</div>
+
+
+<div class="form-group mt-2">
+    <label for="contactField">Your Contact </label>
+    <input type="text"
+     placeholder="Enter here" 
+     id="contactField" 
+      class="form-control">
+   </div>
+
+
+   <div class="form-group mt-2">
+    <label for="addressField">Your Address</label>
+    <textarea
+     placeholder="Enter here" 
+     id="addressField" 
+      class="form-control"
+      rows="5"
+      
+      ></textarea>
+   </div>
+   <p class="text-secondary my-3">Important Links</p>
+
+   <div class="form-group mt-2">
+    <label for="fbField">Facebook </label>
+    <input type="text"
+     placeholder="Enter here" 
+     id="fbField" 
+      class="form-control">
+   </div>
+
+   <div class="form-group mt-2">
+    <label for="instaField">Instagram </label>
+    <input type="text"
+     placeholder="Enter here" 
+     id="instaField" 
+      class="form-control">
+   </div>
+
+   <div class="form-group mt-2">
+    <label for="linkedField">Linkedin</label>
+    <input type="text"
+     placeholder="Enter here" 
+     id="linkedField" 
+      class="form-control">
+   </div>
+
+  
+
+</div>
+<div class="col-md-6">
+<h3>Professional Information</h3>
+<div class="form-group mt-2">
+    <label for="">Objective</label>
+    <textarea
+    id="objectiveField"
+    rows="5"
+     placeholder="Enter here"  
+      class="form-control weField" 
+      ></textarea>
+   </div>
+   <div class="form-group mt-2" id="we">
+    <label for="">Work Experience</label>
+    <textarea
+    rows="3"
+     placeholder="Enter here"  
+      class="form-control weField" 
+      ></textarea>
+
+      <div class="container text-center mt-2" id="weAddButton">
+        <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+      </div>
+   </div>
+ <!-- new textarea -->
+
+   <div class="form-group mt-2"id="aq">
+    <label for="">Academic Qualification</label>
+    <textarea
+    rows="3"
+     placeholder="Enter here"  
+      class="form-control eqField" 
+      ></textarea>
+
+      <div class="container text-center mt-2 " id="aqAddButton">
+        <button  onclick="addNewAQField()"  class="btn btn-primary btn-sm">Add</button>
+      </div>
+   </div>
+</div>
+
+<div class="container text-center mt-3" id>
+    <button onclick="generateCv()" class="btn btn-primary btn-lg">Generate CV</button>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+<!-- cv Template -->
+
+
+<div class="container" id="cv-template">
+
+<div class="row">
+ <div class="col-md-4 text-center py-5 background">
+     <!-- first col -->
+     <img src="https://www.pngkit.com/png/detail/126-1262807_instagram-default-profile-picture-png.png" alt=""
+     class="img-flvid myimg"
+     >
+     <div class="container">
+      <p id="nameT1">John Doe</p>
+      <p id="contactT">+91 9876543219, +91 9876543219</p>
+      <p id="addressT">4th bus stop , sushil banglo ruikar colony, Kolhapur</p>
+      <hr/>
+
+<p>
+  <a id="fbT" href="#1">facebook url</a>
+</p>
+<p>
+  <a id="instaT" href="#1">facebook url</a>
+</p>
+<p>
+  <a id="linkedT" href="#1">facebook url</a>
+</p>
+
+     </div>
+
+   </div>
+   <div class="col-md-8 py-5">
+<!-- second col -->
+
+<h1 id="nameT2" class="text-center " style="font-weight:980 ;">John Doe</h1>
+
+<!-- objective card -->
+
+<div class="card mt-4">
+  <div class="card-header background">
+    <h3>Objective</h3>
+  </div>
+  <div class="card-body">
+   <p id="objectiveT">Lorem ipsum dolor sit amet consectetur 
+      adipisicing elit. Id magni numquam ratione explicabo,
+       vitae totam distinctio ullam est ab voluptas, fugiat 
+      aperiam? Sapiente, quisquam ut.</p>
+  </div>
+</div>
+
+<!-- Work Experience -->
+
+<div class="card mt-4">
+  <div class="card-header background">
+    <h3>Work Experience</h3>
+  </div>
+  <div class="card-body">
+  
+    <ul id="weT">
+<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+   ab ipsam!</li>
+   <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+    ab ipsam!</li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+      ab ipsam!</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+        ab ipsam!</li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- Academic Qualification -->
+
+<div class="card mt-4">
+  <div class="card-header background">
+    <h3>Academic Qualification </h3>
+  </div>
+  <div class="card-body">
+  
+    <ul id="aqT">
+<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+   ab ipsam!</li>
+   <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+    ab ipsam!</li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+      ab ipsam!</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas non
+        ab ipsam!</li>
+
+    </ul>
+  </div>
+</div>
+
+<div class="container mt-3 text-center">
+  <button onclick="printCv()" class="btn background">Print CV</button>
+</div>
+ </div>
+</div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
